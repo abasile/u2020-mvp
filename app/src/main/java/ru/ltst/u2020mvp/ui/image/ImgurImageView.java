@@ -3,6 +3,7 @@ package ru.ltst.u2020mvp.ui.image;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -26,8 +27,11 @@ public class ImgurImageView extends BetterViewAnimator implements BaseView {
         component.inject(this);
     }
 
-    @InjectView(R.id.imgur_image_content)
+    @InjectView(R.id.imgur_image)
     ImageView imageView;
+
+    @InjectView(R.id.imgur_text)
+    TextView textView;
 
     @Override
     protected void onFinishInflate() {
@@ -37,6 +41,7 @@ public class ImgurImageView extends BetterViewAnimator implements BaseView {
 
     public void bindTo(Image image) {
         picasso.load(image.link).into(imageView);
+        textView.setText(image.title);
     }
 
     @Override

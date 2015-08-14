@@ -20,11 +20,31 @@
         android:layout_gravity="center"
         android:text="@string/error_happended_text"/>
 
-    <ImageView
+    <RelativeLayout
         android:id="@+id/imgur_image_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        tools:ignore="ContentDescription" />
+        >
+
+        <ImageView
+            android:id="@+id/imgur_image"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/imgur_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imgur_image"
+            android:layout_centerInParent="true"
+            android:singleLine="true"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
 
 </ru.ltst.u2020mvp.ui.image.ImgurImageView>
